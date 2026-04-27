@@ -237,13 +237,6 @@ To deploy automatically to your Kubernetes cluster, you need a self-hosted GitHu
           
           # Show recent events
           kubectl get events --namespace=${{ vars.NAMESPACE }} --sort-by='.lastTimestamp' | tail -10
-
-      - name: Cleanup
-        if: always()
-        run: |
-          # Logout from registry
-          docker logout ${{ vars.REGISTRY_URL }}
-        shell: bash
 ```
 ### GitHub Personal Access Token
 
